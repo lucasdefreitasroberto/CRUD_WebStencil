@@ -1,0 +1,59 @@
+﻿@LayoutPage layouts/mainLayout
+
+<div class="container mt-5">
+  <h1 class="my-text-gradient">WebStencils</h1>
+  <p>W:</p>
+  <!-- <ol>
+    <li>The @@ symbol</li>
+    <li>Curly braces for blocks { }</li>
+  </ol> -->
+
+  <div class="card">
+    <div class="card-header">Formulário de Cadastro</div>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="inputID" class="form-label">ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputID"
+            placeholder="Digite o ID"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="inputNome" class="form-label">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputNome"
+            placeholder="Digite o Nome"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="inputCidade" class="form-label">Cidade</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCidade"
+            placeholder="Digite a Cidade"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  @Import partials/codeBlock { @code = @codeAtSymbol }
+  <!-- 
+	<p class="mt-4">This syntax accesses the 'value' property of 'object'. The object name is a symbolic local name that can match an actual server application object or be resolved in code while processing an <code>OnValue</code> event handler.</p>
+	
+	<h3 class="mt-5">Curly Braces for Blocks { }</h3>
+	<p>Curly braces are used to denote conditional or repeated blocks. They are processed only when used after a
+		specific WebStencils conditional statement.</p>
+	
+	<h2 class="mt-5">Accessing Values with the Dot Notation</h2>
+	<p>Here's an example of how values are accessed in WebStencils:</p> -->
+
+  @Import partials/codeBlock { @code = @codeDotNotation }
+</div>

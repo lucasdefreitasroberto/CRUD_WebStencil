@@ -13,7 +13,8 @@ uses
   {$ENDIF }
   Web.WebReq,
   Web.WebBroker,
-  ServerConst in 'ServerConst.pas';
+  ServerConst in 'ServerConst.pas',
+  MainWM in 'MainWM.pas' {MainWebModule: TWebModule};
 
 {$R *.res}
 
@@ -161,6 +162,8 @@ begin
   SetConsoleOutputCP(CP_UTF8);
 {$ENDIF}
   try
+    if WebRequestHandler <> nil then
+      WebRequestHandler.WebModuleClass := WebModuleClass;
     ExecutarServidor(8080);
   except
     on E: Exception do
